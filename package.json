@@ -1,0 +1,17 @@
+{
+  "name": "how-scanners-react-to-hd-packages",
+  "version": "1.0.0",
+  "description": "A repository to track how security scanners react to herodevs forked packages",
+  "keywords": [],
+  "author": "",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "license": "ISC",
+  "dependencies": {
+    "angular": "npm:@neverendingsupport/angularjs@1.8.3-trial",
+    "angular-aria": "npm:@neverendingsupport/angularjs@1.8.3-trial-aria",
+    "angular-i18n": "npm:@neverendingsupport/angularjs@1.8.3-trial-i18n",
+    "http-server": "^14.1.1"
+  }
+}

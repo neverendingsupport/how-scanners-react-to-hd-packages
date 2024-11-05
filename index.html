@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello AngularJS</title>
+    <script src="node_modules/angular/angular.min.js"></script>
+</head>
+
+<body ng-app="helloApp">
+
+    <div ng-controller="HelloController">
+        <h1>{{ greeting }}</h1>
+    </div>
+
+    <script>
+        // Define the AngularJS module
+        var app = angular.module('helloApp', []);
+
+        // Create a controller with a greeting message
+        app.controller('HelloController', function ($scope) {
+            $scope.greeting = "Hello, World!";
+        });
+    </script>
+
+</body>
+
+</html>

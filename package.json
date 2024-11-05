@@ -9,9 +9,9 @@
   },
   "license": "ISC",
   "dependencies": {
-    "angular": "npm:@neverendingsupport/angularjs@1.8.3-trial",
-    "angular-aria": "npm:@neverendingsupport/angularjs@1.8.3-trial-aria",
-    "angular-i18n": "npm:@neverendingsupport/angularjs@1.8.3-trial-i18n",
-    "http-server": "^14.1.1"
+    "angular": "npm:@neverendingsupport/angularjs@1.9.7"
+  },
+  "devDependencies": {
+      "http-server": "^14.1.1"
   }
 }

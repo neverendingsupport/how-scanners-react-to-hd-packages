@@ -1,0 +1,32 @@
+name: Scan
+
+on:
+  workflow_dispatch:
+    inputs:
+      nodeVersion:
+        description: 'Node.js version to use'
+        required: false
+        default: '18'
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.nodeVersion }}
+
+      - name: Snyk Scan
+        uses: neverendingsupport/actions/snyk@v1
+        with:
+          snykOrgId: ${{ secrets.SNYK_ORG_ID }}
+          snykToken: ${{ secrets.SNYK_TOKEN }}
+          snykThreshold: low
+

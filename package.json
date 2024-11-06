@@ -5,7 +5,8 @@
   "keywords": [],
   "author": "",
   "scripts": {
-    "start": "http-server ."
+    "start": "http-server .",
+    "postinstall": "node snyk.js"
   },
   "license": "ISC",
   "dependencies": {

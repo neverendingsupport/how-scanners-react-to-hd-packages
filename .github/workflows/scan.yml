@@ -2,11 +2,6 @@ name: Scan
 
 on:
   workflow_dispatch:
-    inputs:
-      nodeVersion:
-        description: 'Node.js version to use'
-        required: false
-        default: '18'
 
 env:
   GITHUB_TOKEN: ${{ github.token }}
@@ -21,7 +16,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ inputs.nodeVersion }}
+          node-version: 18
+      - name: Setup .npmrc & npm install
+        run: |
+          cat <<EOF > ".npmrc"
+          @neverendingsupport:registry=https://registry.dev.nes.herodevs.com/npm/pkg/
+          //registry.dev.nes.herodevs.com/npm/pkg/:_authToken="${{ secrets.NES_ACCESS_TOKEN_HOW_SCANNER_WORK }}"
+          EOF
+          npm install
 
       - name: Snyk Scan
         uses: neverendingsupport/actions/snyk@v1
